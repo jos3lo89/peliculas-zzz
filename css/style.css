@@ -1,0 +1,701 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap");
+
+:root {
+    /* --black: #1B1F3A; */
+    --black: #121b24;
+    --light-bg: #1B1F3A;
+    --white: #ffffff;
+    --azul-claro: #1273c7;
+}
+
+* {
+    font-family: "Rubik", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: 0.2s linear;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+img {
+    user-select: none;
+    pointer-events: none;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
+}
+
+/* *::selection {
+	background-color:rgba(0, 0, 0, 0);
+	color: rgba(0, 0, 0, 0);
+} */
+
+::-webkit-scrollbar {
+    height: 0.5rem;
+    width: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--azul-claro);
+    border-radius: 5rem;
+}
+
+body {
+    background-color: var(--black);
+    -webkit-user-select: none;
+    /* para navegadores basados en WebKit, como Google Chrome y Safari */
+    -moz-user-select: none;
+    /* para navegadores basados en Gecko, como Firefox */
+    -ms-user-select: none;
+    /* para navegadores basados en Trident, como Internet Explorer y Microsoft Edge */
+    user-select: none;
+    /* para navegadores que soportan la especificación CSS3 */
+}
+
+section {
+    max-width: 1650px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* header start */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    text-transform: uppercase;
+    /* background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgb(34, 146, 202)); */
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+}
+
+.header .flex {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.header .flex .logo {
+    font-size: 2.5rem;
+    color: var(--white);
+}
+
+.header .flex .logo span {
+    color: var(--azul-claro);
+}
+
+.header .flex .navbar {
+    cursor: default;
+}
+
+.header .flex .navbar a {
+    color: var(--white);
+    margin-left: 2rem;
+    font-size: 2rem;
+}
+
+.header .flex .navbar a i {
+    color: var(--azul-claro);
+}
+
+.header .flex .navbar a .img-marvel {
+    width: 50px;
+    height: auto;
+}
+
+.header .flex .navbar a .img-dc {
+    width: 25px;
+    height: auto;
+}
+
+#menu-btn {
+    display: none;
+    cursor: pointer;
+    color: var(--white);
+    font-size: 2.5rem;
+    width: 20px;
+    height: 20px;
+}
+
+#boton {
+    cursor: pointer;
+    color: var(--white);
+    font-size: 2.5rem;
+    width: 22px;
+    height: 22px;
+}
+
+#boton.fa-times {
+    transform: rotate(-180deg);
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 900px) {
+    #menu-btn {
+        display: inline-block;
+    }
+
+    #menu-btn.fa-times {
+        transform: rotate(180deg);
+    }
+
+    .header .flex .navbar a {
+        margin-left: 0rem;
+    }
+
+    .header .flex .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        background-color: var(--black);
+        border-bottom: 0.3rem solid var(--azul-claro);
+        border-top: 0.3rem solid var(--azul-claro);
+
+    }
+
+    .header .flex .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .flex .navbar a {
+        display: block;
+        margin: 2rem;
+    }
+}
+
+@media (max-width: 540px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+/* header end */
+
+
+/* sección busqueda start */
+#caja {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 99;
+}
+
+.caja-de-iframe iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* sección busqueda end */
+
+
+/* sección de slider start */
+.heading {
+    margin-bottom: 2.5rem;
+    text-align: center;
+    font-size: 4rem;
+    color: var(--white);
+}
+
+.heading span {
+    color: var(--azul-claro);
+}
+
+.courses .swiper-slide {
+    /* background-color: cadetblue; */
+    border-radius: 0.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 2rem;
+}
+
+.courses .swiper-slide img {
+    height: 230px;
+    width: 175px;
+}
+
+@media (max-width: 768px) {
+    .courses .swiper-slide img {
+        width: 143px;
+        height: 204px;
+    }
+}
+
+.courses .swiper-slide a h3 {
+    margin: 1.5rem 0;
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.swiper-pagination-bullet {
+    background-color: var(--azul-claro);
+}
+
+/* sección de slider end */
+
+
+/* swiper grande start */
+.swiperGrande {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .swiperGrande {
+        height: 400px;
+    }
+}
+
+.swiper-slide-jl img {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.swiper-slide-jl::before {
+    content: "";
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide-jl::after {
+    content: "";
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, var(--black) 100%);
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+}
+
+.swiper-slide-jl .contenido {
+    margin-left: 2.5rem;
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+.swiper-slide-jl h2 {
+    font-size: 2rem;
+    color: #fff;
+}
+
+.btn-ver {
+    font-size: 1.5rem;
+    color: #ffffff;
+    background-color: var(--azul-claro);
+    padding: 2rem 2rem;
+    border-radius: 10px;
+    display: flex;
+    width: 16rem;
+
+}
+
+.btn-ver:hover {
+    transform: scale(1.1);
+    background-color: #3F497F;
+}
+
+.btn-ver:hover i {
+    transform: rotate(180deg);
+}
+
+.btn-ver i {
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+/* boton ver end */
+
+.swiper-slide-jl p {
+    color: #8DA0BC;
+    font-size: 1.5rem;
+    max-width: 500px;
+    margin: 1rem;
+}
+
+.swiper-slide-jl p span {
+    color: #fcb900;
+}
+
+.contenedor-txt {
+    height: 150px;
+    /* overflow-y: scroll; */
+    margin-bottom: 1.5rem;
+    padding: 0 2rem 0 0;
+}
+
+.contenedor-txt .txt-caja2 {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.5;
+
+
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+    .swiper-slide-jl .contenido {
+        margin-left: 1.5rem;
+    }
+}
+
+/* swiper grande end */
+
+
+/* sección de top 10 en pelis999 start */
+.title-top-10 {
+    padding: 2rem;
+    margin: 3rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+}
+
+.title-top-10 p {
+    font-size: 3rem;
+    color: var(--white);
+}
+
+@media (max-width: 768px) {
+    .title-top-10 p {
+        font-size: 2rem;
+        color: var(--white);
+    }
+
+    .title-top-10 p i {
+        font-size: 2rem;
+        margin-right: 0;
+    }
+}
+
+.title-top-10 p i {
+    font-size: 2.5rem;
+    color: var(--azul-claro);
+    margin-right: 1rem;
+}
+
+.title-top-10 p span {
+    color: #1273c7;
+}
+
+/* swiper section start */
+.swiperTop10 {
+    width: auto;
+    height: auto;
+    margin-bottom: 3rem;
+    /* background-color: cadetblue; */
+}
+
+.movieSlide {
+    /* background: #fff; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+}
+
+/* stuilo del tutu */
+.movies-box {
+    width: 100%;
+    height: auto;
+}
+
+.imgContain {
+    position: relative;
+    width: 200px;
+    height: 265px;
+}
+
+.imgContain .imgTop10 {
+    width: 100%;
+    height: 100%;
+}
+
+.imgContain .box-txt {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 265px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* padding: 14px; */
+    background: linear-gradient(8deg,
+
+            hsla(0, 0%, 0%, 0.9) 14%,
+            hsla(0, 0%, 0%, 0.1) 84%);
+    /* background-color: chocolate; */
+    overflow: hidden;
+    gap: .3rem;
+}
+
+@media (max-width: 768px) {
+    .imgContain {
+        width: 180px;
+        height: 250px;
+    }
+
+    .imgContain .box-txt {
+        width: 180px;
+        height: 250px;
+    }
+
+    .movieSlide {
+        /* background: #fff; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 180px;
+    }
+}
+
+@media (max-width: 400px) {
+    .imgContain {
+        width: 160px;
+        height: 230px;
+    }
+
+    .imgContain .box-txt {
+        width: 160px;
+        height: 230px;
+    }
+
+    .movieSlide {
+        /* background: #fff; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 180160pxpx;
+    }
+}
+
+.movie-title {
+    font-size: 1.8rem;
+    color: var(--white);
+    margin-left: 1rem;
+    font-weight: 400;
+}
+
+.movie-type {
+    font-size: 1.2rem;
+    color: #8DA0BC;
+    margin-left: 1rem;
+}
+
+.movie-play-btn {
+    /* background-color: #1273c7; */
+    width: 7rem;
+
+}
+
+.movie-play-btn i {
+    /* width: 100%;
+    height: 100%; */
+    font-size: 3rem;
+    color: #fcb900;
+    border: 2px solid #fcb900;
+    border-radius: 50%;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.movie-play-btn i:hover {
+    background-color: #fcb900;
+    color: #fff;
+}
+
+/* swiper section end */
+
+/* secicion del los botones del swiper nextPrev start */
+
+.title-top-10 {
+    margin-top: 6rem;
+    /* border: 2px solid var(--azul-claro); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-top-10 .cajaNextPrev i {
+    font-size: 3rem;
+    color: #1273c7;
+    cursor: pointer;
+    margin-left: 2rem;
+}
+
+.title-top-10 .cajaNextPrev i:hover {
+    transform: scale(1.2);
+}
+
+/* secicion del los botones del swiper nextPrev end */
+/* sección de top 10 en pelis999 end */
+
+
+
+/* ver peliculas start */
+.title-top-10 p a {
+    font-size: 1.5rem;
+    color: var(--white);
+    background-color: var(--azul-claro);
+    padding: .2rem;
+    border-radius: 1rem;
+}
+
+.cajon {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 310px;
+    gap: 10px;
+}
+
+.pelis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgContainer {
+    position: relative;
+    width: 200px;
+    height: 310px;
+}
+
+.imgContainer img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.imgContainer .text-Box {
+    background-color: var(--black);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.imgContainer:hover .text-Box {
+    opacity: 1;
+    transform: scale(1.05);
+    z-index: 4;
+}
+
+@media screen and (max-width: 440px) {
+    .cajon {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 245px;
+    }
+
+    .imgContainer {
+        /* background-color: cadetblue; */
+        position: relative;
+        width: 160px;
+        height: 245px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .cajon {
+        grid-template-columns: repeat(1, 1fr);
+        grid-auto-rows: 245px;
+    }
+}
+
+/* text-box style */
+.text-Box {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
+.text-Box .movieTitle {
+    color: var(--white);
+    font-weight: 400;
+    font-size: 1.7rem;
+}
+
+.text-Box p {
+    color: #fcb900;
+    font-size: 1rem;
+    /* margin-bottom: 2rem; */
+}
+
+.text-Box p span {
+    padding: .5rem;
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+.text-Box a {
+    background-color: var(--azul-claro);
+    padding: 1rem;
+    /* superior derecha inferior izquierda */
+    border-radius: 1rem;
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.text-Box a i {
+    font-size: 1.5rem;
+    color: #fcb900;
+}
+
+/* ver peliculas end */
+
+
+/* footer start */
+.footer {
+    width: 100%;
+    height: 100px;
+    background-color: var(--black);
+    margin-top: 20px;
+}
+/* footer end */
